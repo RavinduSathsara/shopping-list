@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, FlatList} from 'react-native';
 
 // import components
 
 import Header from './components/Header';
+import ListItem from './components/ListItem';
 
 const App = () => {
   const [items, setItems] = useState([
@@ -13,10 +14,22 @@ const App = () => {
     {id: Math.random(100), text: 'Fruit'},
     {id: Math.random(100), text: 'Bread'},
   ]);
+
+  const deleteItem = id => {
+    setItems(prevItems => {
+      return prevItems.filter(item => item.id != id);
+    });
+  };
+
   return (
     <View style={styles.container}>
       <Header />
-      {/* 29.41 */}
+      <FlatList
+        data={items}
+        renderItem={({item}) => (
+          <ListItem item={item} deleteItem={deleteItem} />
+        )}
+      />
     </View>
   );
 };
