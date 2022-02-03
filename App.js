@@ -9,12 +9,7 @@ import ListItem from './components/ListItem';
 import AddItem from './components/AddItem';
 
 const App = () => {
-  const [items, setItems] = useState([
-    {id: Math.random(100), text: 'Milk'},
-    {id: Math.random(100), text: 'Milo'},
-    {id: Math.random(100), text: 'Fruit'},
-    {id: Math.random(100), text: 'Bread'},
-  ]);
+  const [items, setItems] = useState([{id: Math.random(100), text: 'Milk'}]);
 
   const deleteItem = id => {
     setItems(prevItems => {

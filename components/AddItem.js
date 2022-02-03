@@ -43,6 +43,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 9,
     margin: 5,
+    alignItems: 'center',
+    borderRadius: 20 / 1,
   },
   btnText: {
     color: 'darkblue',
